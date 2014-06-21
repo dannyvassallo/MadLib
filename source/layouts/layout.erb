@@ -8,17 +8,20 @@
     
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "The Middleman" %></title>
-    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/united/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
     <%= stylesheet_link_tag "normalize", "all" %>
   </head>
   
   <body class="<%= page_classes %>">
     <%= yield %>
+    <%= partial "partials/footer" %>
 
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <%= javascript_include_tag  "all" %>
+ <script src="http://sorgalla.com/jcarousel/dist/jquery.jcarousel.min.js"></script>
+        <script src="http://sorgalla.com/jcarousel/examples/responsive/jcarousel.responsive.js"></script>
 
   </body>
 </html>

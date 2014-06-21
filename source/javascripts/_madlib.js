@@ -32,3 +32,8 @@ $(function() {
   });
 
 });
+
+
+$(document).ready(function(){
+  $(".form-group").hide();
+});
