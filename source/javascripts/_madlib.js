@@ -28,7 +28,12 @@ $(function() {
   // ---- event handler ---- //
   $("#play-btn").click(function(e) {
     $("#questions").show();   
+    $(".form-group.first").addClass("current").show();    
+    $(".form-group.last").removeClass("current").hide();    
     $("#story").hide();
+    $("#btn-click").hide();
+    $('#next').attr('disabled', false);
+    $('#prev').attr('disabled', true);
   });
 
 });
@@ -45,6 +50,7 @@ $('#next').click(function() {
         .next().show().addClass('current');
     if ($('.current').hasClass('last')) {
         $('#next').attr('disabled', true);
+        $("#btn-click").show();
     }
     $('#prev').attr('disabled', null);
 });
@@ -58,3 +64,13 @@ $('#prev').click(function() {
     $('#next').attr('disabled', null);
 });
 
+$(document).ready(function(){
+  $(".form-group.first.current").delay( 100 ).show();
+  $("#btn-click").hide();
+});
+
+$(function(){
+  $("#prev").on('click', function(){
+     $("#btn-click").hide(); 
+  });
+});
