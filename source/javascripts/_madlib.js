@@ -74,3 +74,10 @@ $(function(){
      $("#btn-click").hide(); 
   });
 });
+
+$(function(){
+  $("#btn-click").on("click", function(){
+    $('#next').attr('disabled', true);
+    $('#prev').attr('disabled', true);
+  });
+});
