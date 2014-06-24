@@ -40,7 +40,28 @@ $(function() {
 
 
 
-
+$(function () {
+$('.tlt').textillate({
+minDisplayTime: 1000,  
+autoStart: true,  
+initialDelay: 100,  
+loop: false,   
+in: {
+effect: 'fadeInLeft',   
+delayScale: 10,        
+sync: true,          
+shuffle: false,       
+delay: 10,             
+},
+out: {
+//effect: 'bounceOutDown',   
+delayScale: 10,        
+sync: false,          
+shuffle: true,       
+//delay: 10,             
+},
+});
+})
 
 
 
