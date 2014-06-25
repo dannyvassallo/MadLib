@@ -10,6 +10,7 @@ alertify.confirm("Are you sure you want to quit?", function (e) {
     } else {
         // user clicked "cancel"
         alertify.success("Thanks for sticking around! Have some more fun!");
+        $('.navbar-collapse').collapse('hide');
     }
 });
 	});
