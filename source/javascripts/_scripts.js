@@ -14,4 +14,3 @@ alertify.confirm("Are you sure you want to quit?", function (e) {
 });
 	});
 });
-
