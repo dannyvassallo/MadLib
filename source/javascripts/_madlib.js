@@ -1,27 +1,19 @@
+var allGood = false;
+
 $(function() {
 
   // hide the story from view
   $("#story").hide();
 
   // ---- event handler ---- //
-  $("#btn-click").click(function(e) {
-
-    // grab the values from the input boxes, then append them to the DOM
-    $(".person").empty().append($("input.person").val());
-    $(".adjective").empty().append($("input.adjective").val());
-    $(".noun").empty().append($("input.noun").val());
-    $(".insect").empty().append($("input.insect").val());
-    $(".noun2").empty().append($("input.plural-noun").val());
-    $(".verb").empty().append($("input.verb").val());
-
-    // show the story
-    $("#story").show();
-
-    // empty the form's values
-    $(':input').val('');
-
-    // hide the questions
-    $("#questions").hide();
+  $("#btn-click").click(function() {
+    if(allGood) {
+      showStory();
+      $('#prev').attr('disabled', true);
+    }
+    else{
+      $('#prev').attr('disabled', false);
+    }
 
   });
 
@@ -99,6 +91,46 @@ $(function(){
 $(function(){
   $("#btn-click").on("click", function(){
     $('#next').attr('disabled', true);
-    $('#prev').attr('disabled', true);
   });
 });
+
+
+
+
+  $("#btn-click").click(function() {
+        $("input.form-control").each(function(){
+ if($(this).val().length == 0){
+        alertify.alert("You must have missed a field. Go back and add something!");
+      allGood = false;
+      return false;
+    }
+    else{
+      allGood = true;
+  }
+});
+  });
+
+
+function showStory() {
+
+
+    // grab the values from the input boxes, then append them to the DOM
+    $(".person").empty().append($("input.person").val());
+    $(".adjective").empty().append($("input.adjective").val());
+    $(".noun").empty().append($("input.noun").val());
+    $(".insect").empty().append($("input.insect").val());
+    $(".noun2").empty().append($("input.plural-noun").val());
+    $(".verb").empty().append($("input.verb").val());
+
+    // show the story
+    $("#story").show();
+
+    // empty the form's values
+    $(':input').val('');
+
+    // hide the questions
+    $("#questions").hide();
+
+    allGood = false;
+
+}
