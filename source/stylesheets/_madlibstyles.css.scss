@@ -45,8 +45,17 @@
 
 
 .form-group{
-display: none;
+    display: none;
 }
 
+#alertify-logs{
+    top: -8px;
+    width: 100%;
+    text-align: center;
+    right: 0px;
+}
 
+.alertify-log{
+        border-radius: 0px !important;
 
+}
