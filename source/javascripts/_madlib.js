@@ -98,10 +98,11 @@ $(function(){
 
 
   $("#btn-click").click(function() {
-        $(input).each(function(){
- if($(this).val().length != 0){
-        alert("You must have missed a field. Go back and add something!");
+        $("input.form-control").each(function(){
+ if($(this).val().length == 0){
+        alertify.alert("You must have missed a field. Go back and add something!");
       allGood = false;
+      return false;
     }
     else{
       allGood = true;
